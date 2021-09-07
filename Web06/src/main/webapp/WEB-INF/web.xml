@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- @WebServlet("/world") -->
+<!-- 위의 줄을 대신하여 web.xml을 아래와 같이 만들면 사용할 수 있다. -->
+<!-- mapping -->
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+
+	<display-name>Web06</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>world</servlet-name>
+		<servlet-class>Pack.WorldServlet</servlet-class>
+		<!-- Pack이라는 패키지에 들어있는 WorldServlet을 world라고 하겠다. -->
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>world</servlet-name>
+		<url-pattern>/world</url-pattern>
+		<!-- world를 /world를 이용하여 사용하겠습니다.  -->
+	</servlet-mapping>
+	
+</web-app>
